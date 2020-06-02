@@ -11,6 +11,7 @@ git hist -- LICENSE.md
 #### Looking at list of git's config entries:
 git config --global --list
 
+
 ### Unstaging from git (modifications to the README.md file will not be lost, rather it is just the file being unstaged from git staging area):
 git reset HEAD README.md 
 
