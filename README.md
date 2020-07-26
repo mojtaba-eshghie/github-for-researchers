@@ -40,3 +40,26 @@
 
     git config credential.helper store
 
+
+
+## Dealing with conflicts
+Let's say we have two branches like so:
+
+    git checkout -b secondary
+
+That branch plus the master branch, and now let's assume we are editting in both branches and creating conflicts:
+    
+    git nano the_file.txt #already in secondary branch
+    git add . 
+    git commit -am "this is a bad commit"
+    git checkout master
+    git nano the_file.txt #changing to smt else
+    git add . 
+    git commit -am "this one is a bad commit as well"
+    git merge secondary # merging master with secondary
+
+As you can guess, the last command will raise an error. You can use mergetool (if you have already configured in ~/.gitconfig file). The best tool is p4merge.
+
+    git mergetool
+
+In the bottom of the application you can decide if the proposed final file is good or not, then save it, and close the mergetool. 
