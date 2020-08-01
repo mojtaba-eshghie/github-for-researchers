@@ -90,4 +90,4 @@ The real use of annotated tags is when we `git show tagname`. It will show tagge
     git show v1.0.1
 
 The result would b
-![alt text](http://url/to/img.png)
+![alt text](https://raw.githubusercontent.com/mojtaba-eshghie/github-for-researchers/master/resources/a_tags.png)
