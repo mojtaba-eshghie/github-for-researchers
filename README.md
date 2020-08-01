@@ -63,3 +63,31 @@ As you can guess, the last command will raise an error. You can use mergetool (i
     git mergetool
 
 In the bottom of the application you can decide if the proposed final file is good or not, then save it, and close the mergetool. 
+
+
+
+## Git tags
+Tags are just a feature to mark some point in repository. They are just labels that we can put at any arbitrary commit point. By default if we don't specify commit, they will be HEAD!
+
+Using light tags:
+
+    git tag mytag # will tag head
+    git tag --list
+    git hist # will also show tags
+    
+    # to delete tags:
+    git tag -d mytag
+
+Using anotated tags (which support adding more info):
+
+    git tag -a v1.0 -m "Release 1.0"
+    git tag --list
+    git hist
+
+The real use of annotated tags is when we `git show tagname`. It will show tagger, date, and the commit message we put on that tag, and after those the information of the commit that is associated with that tag:
+
+    git tag -a v1.0.1 -m "Patch 1.0.1"
+    git show v1.0.1
+
+The result would b
+![alt text](http://url/to/img.png)
