@@ -91,3 +91,35 @@ The real use of annotated tags is when we `git show tagname`. It will show tagge
 
 The result would b
 ![alt text](https://raw.githubusercontent.com/mojtaba-eshghie/github-for-researchers/master/resources/a_tags.png)
+
+
+
+## Git stashing
+Stashing can help us to save our in progress work in a stack like structure and retrieve it sometime else. If we think of the branch as a tunnel we are moving through, stashing is like a hole dug into the ground we can use to put our stuff (unstaged changes) in it to retrieve (pop) and stage & commit at some later time. 
+
+    # first make some changes to a file like README.md, then:
+    git stash 
+
+    # now let's do some other changes other things, then stage and commit them.
+    
+    # now list the stashes we have
+    git stash list 
+
+    # as we said it may be used as an stack
+    git stash pop 
+
+    # now it is possible to stage and commit the changes 
+    git add .
+    git commit -m "changed the README.md file"
+
+Alternatively it is possible to use `git stash apply` instead of `git stash pop`. If we want to use these stashes (stage and commit them) at different locations in our work.
+
+A better approach would be to annotate your stashes:
+
+    git stash save "Changed the last pragraph of readme file"
+
+Using the stash id we can apply the ones that we want out of stack order:
+
+    # for stash id 2 (id is written in front of each stash like stash@{2}:)
+    git stash apply 2
+
