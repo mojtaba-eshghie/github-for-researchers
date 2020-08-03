@@ -123,3 +123,25 @@ Using the stash id we can apply the ones that we want out of stack order:
     # for stash id 2 (id is written in front of each stash like stash@{2}:)
     git stash apply 2
 
+
+
+## Traveling through commits using reset
+With reset we can travel through commits. There are three types of them:
+- soft: just changes where head is and does not unstage the staged changes (that where not commited when we issued reset command)
+- mixed: changes the commit where head is and unstages the staged changes that were staged but not commited yet when we issued this command. So, if we have had any staged changes that were not commited before, we have to stage them again (using `git add .`)
+- hard: changes the commit where head is and unstages, undo's all of the changes (!!!) that were staged but not commited yet (we could see them green when we issued `git status`)
+Reset, actually changes the place where 'HEAD' points to. The very distructive nature of --hard causes to uncommited changes get vanished.
+
+Usage of command: 
+
+    git reset --soft commit_id
+    git status
+    git hist
+
+    # we can both move forward and backward in git commits
+
+### Using reflog to see all of actions we have had in the repository
+This will not only show us the commits, but also merges, resets, checkouts,....
+Usage:
+
+    git reflog 
