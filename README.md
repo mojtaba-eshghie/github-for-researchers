@@ -145,3 +145,8 @@ This will not only show us the commits, but also merges, resets, checkouts,....
 Usage:
 
     git reflog 
+
+## To clone only a specific branch
+
+    git clone --single-branch --branch <branchname> <remote-repo>
+
